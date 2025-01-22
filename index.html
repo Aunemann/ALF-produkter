@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/icon/favicon.svg" />
+    <link rel="shortcut icon" href="/icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="/icon/site.webmanifest" />
+    <title>ALF - Produkter</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">ALF Produkter</div>
+        <nav>
+            <a href="./index.html">Hjem</a>
+            <a href="./sider/produkt/index.html">Produkter</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <h1 class="hero-title">Velkommen </h1>
+        <p>Produkter laget av Arbeidslivsfag kull 09</p>
+        <p>2024-2025</p>
+        <button class="cta-btn"><a href="./sider/produkt/index.html">Se Produkter</a></button>
+    </section>
+    <section id="buy" class="buy">
+        <h2>Hvordan vil du handle kjøp for dine produkter</h2>
+        <h2>Eks 1:</h2>
+        <p>Kommer nok ikke til å virke. Trenger å legge til betaling metoder og for et skole prosjekt er det ikke vits å legge til.</p>
+        <div class="buy-options">
+            <div class="option">
+                <h3>1. Velg antall</h3>
+                <input type="number" id="quantity" value="1" min="1" max="10">
+            </div>
+            <div class="option">
+                <h3>2. Legg til i handlekurv</h3>
+                <button onclick="addToCart()" class="cta-btn">Legg i handlekurv</button>
+            </div>
+            <div class="option">
+                <h3>3. Fullfør kjøp</h3>
+                <button onclick="buyNow()" class="cta-btn">Fullfør kjøp</button>
+            </div>
+        </div>
+        <h2>Eks 2:</h2>
+        <p>Link til egen nettside (Shopify for eksempel)</p>
+        <button onclick="openInNewTab()" class="cta-btn"><p>Link til Nettside som knapp</p></button>
+        <p>Byttes med "Kjøp Knappen"</p>
+        <h2>Eks 3:</h2>
+        <p>Kontakt informasjon. (Font og størrelse kan endres om ønsket)</p>
+    </section>
+
+    <footer id="contact">
+        <p>Kontakt</p>
+        <p>&copy; Aune Thorsen</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
