@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/icon/favicon.svg" />
-    <link rel="shortcut icon" href="/icon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-    <link rel="manifest" href="/icon/site.webmanifest" />
-    <title>ALF - Produkter</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <title>Hjemmelagde Lysstaker</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+  <header>
+    <h1>Hjemmelagde Lysstaker</h1>
+  </header>
 
-    <header>
-        <div class="logo">ALF Produkter</div>
-        <nav>
-            <a href="./index.html">Hjem</a>
-            <a href="./sider/produkt/index.html">Produkter</a>
-            <a href="#contact">Kontakt</a>
-        </nav>
-    </header>
-
-    <section id="hero" class="hero">
-        <h1 class="hero-title">Velkommen </h1>
-        <p>Produkter laget av Arbeidslivsfag kull 09</p>
-        <p>2024-2025</p>
-        <button class="cta-btn"><a href="./sider/produkt/index.html">Se Produkter</a></button>
-    </section>
-    <section id="buy" class="buy">
-        <h2>Hvordan vil du handle kjøp for dine produkter</h2>
-        <h2>Eks 1:</h2>
-        <p>Kommer nok ikke til å virke. Trenger å legge til betaling metoder og for et skole prosjekt er det ikke vits å legge til.</p>
-        <div class="buy-options">
-            <div class="option">
-                <h3>1. Velg antall</h3>
-                <input type="number" id="quantity" value="1" min="1" max="10">
-            </div>
-            <div class="option">
-                <h3>2. Legg til i handlekurv</h3>
-                <button onclick="addToCart()" class="cta-btn">Legg i handlekurv</button>
-            </div>
-            <div class="option">
-                <h3>3. Fullfør kjøp</h3>
-                <button onclick="buyNow()" class="cta-btn">Fullfør kjøp</button>
-            </div>
+  <main>
+    <section class="product-grid">
+      <article class="product-card">
+        <div class="gallery-container">
+          <img src="https://placehold.co/600x400" class="main-image" alt="Hovedbilde av lysstake" onclick="openModal('https://placehold.co/600x400')">
+          <div class="thumbnails">
+            <img src="https://placehold.co/150x100" class="gallery-thumbnail" alt="Lysstake miniatyr 1" onclick="changeMainImage('https://placehold.co/600x400', this)">
+            <img src="https://placehold.co/150x100" class="gallery-thumbnail" alt="Lysstake miniatyr 2" onclick="changeMainImage('https://placehold.co/600x400', this)">
+            <img src="https://placehold.co/150x100" class="gallery-thumbnail" alt="Lysstake miniatyr 3" onclick="changeMainImage('https://placehold.co/600x400', this)">
+          </div>
         </div>
-        <h2>Eks 2:</h2>
-        <p>Link til egen nettside (Shopify for eksempel)</p>
-        <button onclick="openInNewTab()" class="cta-btn"><p>Link til Nettside som knapp</p></button>
-        <p>Byttes med "Kjøp Knappen"</p>
-        <h2>Eks 3:</h2>
-        <p>Kontakt informasjon. (Font og størrelse kan endres om ønsket)</p>
+        <h2>Hjemmelagde Lysstaker</h2>
+        <button class="buynow" onclick="showPaymentInstructions()">Kjøp Nå</button>
+      </article>
+      </section>
+
+    <section id="payment-instructions" class="hidden">
+      <h3>Betaling via Vipps</h3>
+      <ol class="instruction-list">
+        <li>Send SMS til <strong>+47 412 95 289</strong> for lagerstatus</li>
+        <li>Betal til Vippsnummer: <strong>122396</strong></li>
+        <li>Merk betalingen med <strong>ALF 09</strong></li>
+      </ol>
+      <button onclick="confirmPayment()">Jeg har betalt</button>
     </section>
+  </main>
 
-    <footer id="contact">
-        <p>Kontakt</p>
-        <p>&copy; Aune Thorsen</p>
-    </footer>
+  <div class="share-button">
+    <input type="checkbox" id="share-toggle">
+    <label for="share-toggle" class="share-icon" aria-label="Del">
+      <i class="fas fa-share-alt"></i>
+    </label>
+    <div class="share-links">
+      <a href="#" title="Facebook" aria-label="Del på Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" title="Twitter" aria-label="Del på Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" title="LinkedIn" aria-label="Del på LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" title="Pinterest" aria-label="Del på Pinterest"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+  </div>
 
-    <script src="./script.js"></script>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Om Oss</h4>
+        <p>Vi lager håndlagde Lysstaker med omtanke for kvalitet og bærekraft.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+    </div>
+  </footer>
+
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script src="./script.js"></script>
 </body>
 </html>
